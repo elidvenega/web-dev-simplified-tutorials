@@ -7,20 +7,33 @@
 // 4.Understand Callback Functions
 
 // JSON Placeholder example
-fetch('https://jsonplaceholder.typicode.com/posts', {
+const getData = () => {
+    try {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
-        body: JSON.stringify({
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({ 
             title: 'foo',
             body: 'bar',
             userId: 1,
             weight: 20
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
+        })
+       
     })
     .then((response) => response.json())
     .then((json) => console.log(json));
+    }
+  catch {
+      console.log('error');
+  }
+}
+
+getData();
+
+
+
 
 
 
