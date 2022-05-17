@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // Purpose of this project
 // Goals
 // 1.Understand Fetch
@@ -7,33 +7,39 @@
 // 4.Understand Callback Functions
 
 // JSON Placeholder example
-const getData = () => {
-    try {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify({ 
-            title: 'foo',
-            body: 'bar',
-            userId: 1,
-            weight: 20
-        })
-       
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-    }
-  catch {
-      console.log('error');
-  }
+// const getData = () => {
+//     try {
+//         fetch('https://jsonplaceholder.typicode.com/posts', {
+//         method: 'POST',
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//         body: JSON.stringify({
+//             title: 'foo',
+//             body: 'bar',
+//             userId: 1,
+//             weight: 20
+//         })
+
+//     })
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
+//     }
+//   catch {
+//       console.log('error');
+//   }
+// }
+
+// getData();
+
+function apiData() {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((resp) => resp.json())
+    .then((data) => console.log(data));
 }
 
-getData();
+console.log(apiData());
 
-
-
-
+//const data = document.getElementById("data").innerText = apiData();
 
 
