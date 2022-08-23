@@ -1,6 +1,7 @@
 // A JS Promise
 const newPromise = new Promise((resolve, reject) => {
-    if (1 == 1) {
+    let x = 2 + 2;
+    if (x == 1) {
         resolve('success')
     } else {
         reject('failure')
