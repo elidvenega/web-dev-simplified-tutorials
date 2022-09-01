@@ -36,6 +36,8 @@ function apiData() {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((resp) => resp.json())
     .then((data) => console.log(data));
+    document.getElementById('data').innerHTML += `
+    `
 }
 
 console.log(apiData());
