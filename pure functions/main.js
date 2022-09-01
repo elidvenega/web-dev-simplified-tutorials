@@ -1,3 +1,11 @@
+//impure function
+let arr = [1, 2, 3, 4];
+
+function addToArray(element) {
+  return arr.push(element);
+}
+addToArray(5);
+console.log(arr);
 // Pure Functions
 // A function does not have any side effects
 // inputs are immutable variables
