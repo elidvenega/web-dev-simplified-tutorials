@@ -32,17 +32,40 @@
 
 // getData();
 
-function apiData() {
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+async function getUsers() {
+  const url = "https://jsonplaceholder.typicode.com/users";
   try {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((resp) => resp.json())
-      .then((data) => console.log(data));
-  } catch {
-    console.log(err);
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log('error big time');
   }
-  
 }
 
-console.log(apiData());
+// create a function to render output
+async function renderUsers() {
+  try {
+    const users = await getUsers();
+    let html = "";
+    users.forEach((user) => {
+      let htmlSegment = `
+      <div class='user'>
+        <h2>${user.username} ${user.email}</h2>
+        <div class="email"><a href="email:${user.email}">${user.email}</a></div>
+      </div>
+        
+        `;
+      html += htmlSegment;
+    });
+    let container = document.querySelector("#data");
+    container.innerHTML = html;
+  } catch (error) {
+    console.log("error big time");
+  }
+}
 
-document.querySelector("#data").innerText = apiData();
+renderUsers();
