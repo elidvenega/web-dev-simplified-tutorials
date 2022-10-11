@@ -4,8 +4,9 @@ let arr = [1, 2, 3, 4];
 function addToArray(element) {
   return arr.push(element);
 }
+
 addToArray(5);
-console.log(arr);
+console.log(arr,"Impure Function");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Pure Functions
@@ -18,7 +19,7 @@ function addElementToArray(a, element) {
   return [...a, element];
 }
 
-console.log(addElementToArray(array, 4));
+console.log(addElementToArray(array, 4,), "Pure function");
 
 // array = [1,2,3,4]
 
@@ -33,3 +34,7 @@ console.log(purefuncPractice(3, 3));
 console.log(purefuncPractice(3, 3));
 console.log(purefuncPractice(3, 3));
 console.log(purefuncPractice(3, 3));
+
+
+
+
